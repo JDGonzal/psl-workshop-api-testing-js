@@ -4,18 +4,18 @@ const chai = require ('chai');
 const expect = chai.expect;
 describe('First Api Tests' , () => {
   it('Consume GET Service' , () => {
-     return agent.get('https://httpbin.org/ip').then((response) => {
-       expect(response.status).to.equal(statusCode.OK);
-       expect(response.body).to.have.property('origin');
-     });
+    return agent.get('https://httpbin.org/ip').then((response) => {
+      expect(response.status).to.equal(statusCode.OK);
+      expect(response.body).to.have.property('origin');
+    });
   });
 
   it('Consume GET Service with query parameters' , () => {
-     const query = {
-       name: 'John' ,
-       age: '31' ,
-       city: 'New York'
-     };
+    const query = {
+      name: 'John' ,
+      age: '31' ,
+      city: 'New York'
+    };
   return agent.get('https://httpbin.org/get')
     .query(query)
     .then((response) => {
@@ -40,11 +40,11 @@ describe('First Api Tests' , () => {
   });
 
   it('Consume HEAD Service' , () => {
-     const query = {
-       name: 'John' ,
-       age: '31' ,
-       city: 'New York'
-     };
+    const query = {
+      name: 'John' ,
+      age: '31' ,
+      city: 'New York'
+    };
     return agent.head('https://httpbin.org/headers')
       .query(query)
       .then((response) => {
@@ -84,11 +84,11 @@ describe('First Api Tests' , () => {
   });
 
   it('Consume DELETE Service with query parameters' , () => {
-     const query = {
-       name: 'John' ,
-       age: '31' ,
-       city: 'New York'
-     };
+    const query = {
+      name: 'John' ,
+      age: '31' ,
+      city: 'New York'
+    };
   return agent.del('https://httpbin.org/delete')
     .query(query)
     .then((response) => {
